@@ -1,139 +1,213 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./LogoDenizMavisi.png">
-    <link rel="apple-touch-icon" href="./LogoDenizMavisi.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caner Şahin</title>
+  <meta name="description" content="Caner Şahin — projelerim ve iletişim bilgilerim.">
+  <meta name="author" content="Caner Şahin">
+  <meta name="theme-color" content="#050912">
+  <link rel="canonical" href="https://www.canersahin.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.canersahin.com/">
+  <meta property="og:title" content="Caner Şahin">
+  <meta property="og:description" content="Projelerim ve iletişim bilgilerim.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050912;
+      --navy: #0b1730;
+      --card: #0c1527;
+      --card-hover: #101c34;
+      --line: #1a2742;
+      --line-2: #24365a;
+      --text: #eef3ff;
+      --text-2: #93a3c4;
+      --text-3: #5f6f92;
+      --blue: #3b82f6;
+      --blue-2: #60a5fa;
+      --live: #34d399;
+      --moving: #f5b84a;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(900px 520px at 50% -160px, #10295a 0%, rgba(16, 41, 90, .35) 45%, transparent 75%),
+        var(--bg);
+      color: var(--text);
+      font: 15px/1.55 "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    svg.i { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    svg.f { fill: currentColor; stroke: none; }
 
-    <title>Caner Şahin | Frontend Developer</title>
-    <meta name="description"
-        content="Caner Şahin'in kişisel web sitesi. Frontend projeleri, özgeçmiş ve PWA uygulamalarına buradan ulaşabilirsiniz.">
-    <meta name="keywords"
-        content="Caner Şahin, frontend developer, Caner, Şahin, kişisel web sitesi, React projeleri, uçak bileti uygulaması, görsel arama, kura çekiliş uygulaması, PWA">
-    <meta name="author" content="Caner Şahin">
+    .wrap { max-width: 760px; margin: 0 auto; padding: 72px 20px 48px; }
 
-    <meta property="og:title" content="Caner Şahin | Frontend Developer" />
-    <meta property="og:description"
-        content="Frontend projelerimi ve PWA uygulamalarımı keşfetmek için web sitemi ziyaret edin." />
-    <meta property="og:image" content="https://www.canersahin.com/LogoDenizMavisi.png" />
-    <meta property="og:url" content="https://www.canersahin.com/" />
-    <meta property="og:type" content="website" />
+    /* --- Profil --- */
+    .profile { text-align: center; }
+    .mark { width: 84px; height: 84px; margin: 0 auto; display: block; filter: drop-shadow(0 10px 30px rgba(59, 130, 246, .35)); }
+    h1 { margin: 22px 0 0; font-size: 32px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; }
+    .role { margin: 6px 0 0; color: var(--blue-2); font-weight: 500; font-size: 16px; }
 
-    <link rel="canonical" href="https://www.canersahin.com/" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    .info {
+      list-style: none; padding: 0; margin: 28px auto 0;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    }
+    .info a, .info span {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 9px 14px; border-radius: 12px;
+      background: rgba(12, 21, 39, .75); border: 1px solid var(--line);
+      color: var(--text-2); font-size: 14px; font-weight: 500;
+      transition: border-color .15s, color .15s, background .15s;
+    }
+    .info a:hover { border-color: var(--blue); color: var(--text); background: var(--card-hover); }
+    .info svg { color: var(--blue-2); }
+    .info a.sq { padding: 9px 11px; }
+
+    /* --- Projeler --- */
+    .projects { margin-top: 56px; }
+    .head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; padding: 0 2px; }
+    h2 { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .legend { display: flex; gap: 14px; font-size: 12px; color: var(--text-3); }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i, .st i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+
+    .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .card {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 16px; height: 100%;
+      border-radius: 16px; background: var(--card); border: 1px solid var(--line);
+      transition: border-color .15s, background .15s, transform .15s;
+    }
+    a.card:hover { border-color: var(--line-2); background: var(--card-hover); transform: translateY(-2px); }
+    a.card:hover .go { color: var(--blue-2); transform: translate(2px, -2px); }
+    .ic {
+      width: 46px; height: 46px; border-radius: 13px; flex-shrink: 0;
+      display: grid; place-items: center;
+      background: linear-gradient(145deg, #1d4ed8, #0b2a6b);
+      color: #dbe7ff; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12);
+    }
+    .ic svg { width: 22px; height: 22px; }
+    .body { min-width: 0; flex: 1; }
+    .body h3 { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.3; }
+    .body p { margin: 2px 0 0; font-size: 13px; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .st { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 12px; font-weight: 500; }
+    .st.live { color: var(--live); }
+    .st.moving { color: var(--moving); }
+    .go { color: var(--text-3); transition: .15s; }
+    .card.off { background: transparent; border-style: dashed; }
+    .card.off .ic { background: var(--navy); color: var(--text-3); box-shadow: none; }
+    .card.off h3 { color: var(--text-2); }
+
+    footer { margin-top: 56px; text-align: center; color: var(--text-3); font-size: 13px; }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 48px 16px 36px; }
+      .grid { grid-template-columns: minmax(0, 1fr); }
+      .legend { display: none; }
+    }
+  </style>
 </head>
-
-
 <body>
-    <div id="root">
-        <h2>Web sitem güncelleniyor..</h2>
-        <a href="" target="_blank">
-            <img src="loadingCark.gif" class="logo react" alt="React logo" />
-        </a>
-        <p>
-            İlgi ve anlayışınız için teşekkür ederim!
-        </p>
-        <h2>
-            Caner Şahin
-        </h2>
-        <hr>
-        </hr>
-        <div class='infoArea'>
-            <div class='itemArea'>
-                <i class='bx bx-laptop iconSettings'></i>
-                <span class="infoAreaItemSettings">
-                    Frontend Developer
-                </span>
-            </div>
-            <div class='itemArea'>
-                <i class='bx bx-phone iconSettings'></i>
-                <a href='tel:+905313277914' class="infoAreaItemSettings">
-                    +905313277914
-                </a>
-            </div>
-            <div class='itemArea'>
-                <i class='bx  bx-envelope iconSettings'></i>
-                <a href='mailto:caneersahin77@gmail.com' class="infoAreaItemSettings">
-                    <span>caneersahin77@gmail.com</span>
-                </a>
-            </div>
+  <main class="wrap">
+
+    <section class="profile">
+      <svg class="mark" viewBox="0 0 84 84" aria-hidden="true">
+        <defs>
+          <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3b82f6"/>
+            <stop offset="1" stop-color="#0b2a6b"/>
+          </linearGradient>
+        </defs>
+        <rect width="84" height="84" rx="26" fill="url(#mg)"/>
+        <rect x="1" y="1" width="82" height="82" rx="25" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="2"/>
+        <path d="M55.5 27.6a20 20 0 1 0 0 28.8" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="60" cy="42" r="5.5" fill="#93c5fd"/>
+      </svg>
+      <h1>Caner Şahin</h1>
+      <p class="role">Full Stack Developer</p>
+
+      <ul class="info">
+        <li><span><svg class="i" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>İstanbul</span></li>
+        <li><a href="tel:+905313277914"><svg class="i" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>+90 531 327 79 14</a></li>
+        <li><a href="mailto:caneersahin77@gmail.com"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>caneersahin77@gmail.com</a></li>
+        <li><a class="sq" href="https://github.com/caneersahin" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="i f" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a></li>
+        <li><a class="sq" href="https://www.linkedin.com/in/caneersahin" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="i f" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.83v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.81c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.89h-4v-11Z"/></svg></a></li>
+      </ul>
+    </section>
+
+    <section class="projects" aria-labelledby="h-projeler">
+      <div class="head">
+        <h2 id="h-projeler">Projeler</h2>
+        <div class="legend">
+          <span><i style="background:var(--live)"></i>Yayında</span>
+          <span><i style="background:var(--moving)"></i>Yakında</span>
         </div>
-        <hr>
-        </hr>
-        <div class='projectArea'>
-            <div class='appItems' onclick="window.location.href='/kura'">
-                <a class='appItemsButton' href="https://kuraapp.canersahin.com">
-                    <i class='bx bx-dice-3 iconSettings'></i>
-                </a>
-                <div></div>
-                <span>Kura App</span>
-            </div>
-            <div class='appItems' onclick="window.open('https://ai-fis-okuyucu.canersahin.com', '_blank')">
-                <a class='appItemsButton'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        viewBox="0 0 24 24" class="iconSettings">
-                        <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                        <path
-                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M5 19V5h14v14z">
-                        </path>
-                        <path d="M8.5 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3m2.5.5h6v2h-6zM7 7h10v2H7zm0 8h10v2H7z">
-                        </path>
-                    </svg>
-                </a>
-                <div></div>
-                <span>Ai Fiş Okuma App</span>
-            </div>
+      </div>
+      <ul class="grid" id="grid"></ul>
+    </section>
 
-            <div class='appItems' onclick="window.open('https://havadurumuai.canersahin.com', '_blank')">
-                <a class='appItemsButton' href="https://havadurumuai.canersahin.com" target="_blank">
-                    <svg class="iconSettings" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                        fill="currentColor" viewBox="0 0 24 24">
-                        <!--Boxicons v3.0.7 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                        <path
-                            d="M21.61 8.95c.13-.3.23-.62.29-.94.07-.33.1-.67.1-1.01 0-.55-.45-1-1-1-1.65 0-3-1.35-3-3 0-.55-.45-1-1-1-.34 0-.67.03-1.01.1-.32.07-.64.17-.94.29a5 5 0 0 0-1.59 1.07c-.23.22-.43.47-.61.74s-.34.55-.46.85c-.13.3-.23.62-.29.94 0 .04 0 .07-.01.11-.36-.06-.72-.1-1.09-.1-3.11 0-5.79 2.25-6.38 5.25A3.96 3.96 0 0 0 2 15c0 2.21 1.79 4 4 4h10.75c2.9 0 5.25-2.36 5.25-5.25 0-1.31-.5-2.5-1.3-3.42.16-.17.31-.34.44-.54.18-.27.34-.55.46-.85ZM14.06 6.4c.04-.19.1-.38.18-.56.07-.18.17-.35.28-.51s.23-.31.37-.45a3.2 3.2 0 0 1 .96-.65c.1-.04.19-.08.29-.11a5.02 5.02 0 0 0 3.74 3.74c-.03.1-.07.2-.11.3-.07.18-.17.35-.28.51-.1.15-.22.29-.35.43-.72-.37-1.52-.6-2.39-.6-.2 0-.4.01-.6.04a6.5 6.5 0 0 0-2.12-1.79c0-.12.01-.24.04-.36ZM16.75 17H6c-1.1 0-2-.9-2-2 0-.98.71-1.81 1.68-1.96l.77-.12.06-.78c.19-2.32 2.16-4.13 4.48-4.13 1.58 0 3.02.81 3.84 2.17l.39.63.72-.18c.31-.08.56-.12.81-.12 1.79 0 3.25 1.46 3.25 3.25s-1.46 3.25-3.25 3.25Z">
-                        </path>
-                    </svg>
-                </a>
-                <div></div>
-                <span>Hava Durumu (Sms&Tweet)</span>
-            </div>
+    <footer>© <span id="year">2026</span> Caner Şahin</footer>
+  </main>
 
-            <div class='appItems' onclick="window.open('https://futureme.canersahin.com', '_blank')">
-                <a class='appItemsButton' href="https://futureme.canersahin.com" target="_blank">
-                    <svg class="iconSettings" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                        fill="currentColor" viewBox="0 0 24 24">
-                        <!--Boxicons v3.0.7 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                        <path
-                            d="M19 12.59V10c0-3.22-2.18-5.93-5.14-6.74C13.57 2.52 12.85 2 12 2s-1.56.52-1.86 1.26C7.18 4.08 5 6.79 5 10v2.59L3.29 14.3a1 1 0 0 0-.29.71v2c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-2c0-.27-.11-.52-.29-.71zM19 16H5v-.59l1.71-1.71a1 1 0 0 0 .29-.71v-3c0-2.76 2.24-5 5-5s5 2.24 5 5v3c0 .27.11.52.29.71L19 15.41zM5.64 3.3 4.23 1.89A10.9 10.9 0 0 0 1 9.67h2c0-2.4.94-4.66 2.64-6.36ZM18.36 3.3C20.06 5 21 7.26 21 9.66h2c0-2.94-1.14-5.7-3.22-7.78l-1.41 1.41ZM12 22c1.31 0 2.41-.83 2.82-2H9.18c.41 1.17 1.51 2 2.82 2">
-                        </path>
-                    </svg>
-                </a>
-                <div></div>
-                <span>Hatırlatıcı App</span>
-            </div>
+  <script src="projects.js"></script>
+  <script>
+    const ICONS = {
+      plane: '<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/>',
+      receipt: '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8H8M16 12H8M13 16H8"/>',
+      dice: '<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.2" fill="currentColor"/>',
+      cloud: '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>',
+      bell: '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
+      camera: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3"/>',
+      route: '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/>',
+      code: '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
+    };
+    const ARROW = '<svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+    const LABEL = { live: "Yayında", moving: "Yakında" };
 
-            <div class='appItems' onclick="window.location.href='/biGorsel'">
-                <a class='appItemsButton' href="/biGorsel">
-                    <i class="bx bx-camera iconSettings"></i>
-                </a>
-                <div></div>
-                <span>BiGörsel Pwa App</span>
-            </div>
+    const grid = document.getElementById("grid");
+    for (const p of window.PROJECTS) {
+      const isLink = p.url && p.status === "live";
+      const card = document.createElement(isLink ? "a" : "div");
+      card.className = "card" + (isLink ? "" : " off");
+      if (isLink) { card.href = p.url; card.target = "_blank"; card.rel = "noopener"; }
 
-            <div class='appItems' onclick="window.location.href='/firsatrotasi'">
-                <a class='appItemsButton' href="/firsatrotasi/index.html">
-                    <i class='bx bx-paper-plane iconSettings'></i>
-                </a>
-                <div></div>
-                <span>Ucuza Uçak Bileti</span>
-            </div>
-        </div>
+      const ic = document.createElement("div");
+      ic.className = "ic";
+      ic.innerHTML = '<svg class="i" viewBox="0 0 24 24">' + (ICONS[p.icon] || ICONS.code) + "</svg>";
 
-    </div>
-    <script type="module" src="/src/main.jsx"></script>
+      const body = document.createElement("div");
+      body.className = "body";
+      const h3 = document.createElement("h3");
+      h3.textContent = p.name;
+      const desc = document.createElement("p");
+      desc.textContent = p.description;
+      desc.title = p.description;
+      const st = document.createElement("div");
+      st.className = "st " + p.status;
+      st.innerHTML = '<i style="background:currentColor"></i>';
+      st.append(LABEL[p.status]);
+      body.append(h3, desc, st);
+
+      card.append(ic, body);
+      if (isLink) {
+        const go = document.createElement("span");
+        go.className = "go";
+        go.innerHTML = ARROW;
+        card.append(go);
+      }
+      const li = document.createElement("li");
+      li.append(card);
+      grid.append(li);
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
