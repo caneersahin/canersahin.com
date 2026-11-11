@@ -3,6 +3,13 @@
 // icon: index.html içindeki ICONS listesinden biri
 window.PROJECTS = [
   {
+    name: "Fırsatopya",
+    description: "Banka ve operatör kampanyaları tek yerde",
+    url: "https://firsatopya.canersahin.com",
+    status: "live",
+    icon: "tag",
+  },
+  {
     name: "Flyscope",
     description: "Uçak bileti fiyat takibi ve bildirim",
     url: "https://flyscope.net",
@@ -40,11 +47,5 @@ window.PROJECTS = [
     description: "Görsel arama uygulaması",
     status: "moving",
     icon: "camera",
-  },
-  {
-    name: "Fırsat Rotası",
-    description: "Ucuz uçak bileti fırsatları",
-    status: "moving",
-    icon: "route",
   },
 ];
